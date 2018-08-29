@@ -1,0 +1,23 @@
+<% content_for :list do %>
+ This is the content for head
+<% end %>
+
+<h1>LIST</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th colspan="3"></th>
+      <td></td>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @artikel.each do |article| %>
+      <tr>
+        <td><%= article.title %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

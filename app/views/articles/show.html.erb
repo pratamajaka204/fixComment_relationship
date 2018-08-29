@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <title>List Data</title>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+		<ul class="nav navbar-nav">
+			<li class="nav-item"><%= link_to 'Home', articles_path, class: 'btn btn-lg btn-primary' %></li>
+			<li class="nav-item"><%= link_to 'Add Data', new_article_path, class: 'btn btn-lg btn-warning' %></li>
+			
+		</ul>
+</nav>
+<div class="container">
+	<div class="content-wrapper">
+		<section class="content">
+			<div class="row">
+				<div class="col-md-12">
+					<!-- CONTENT HERE -->
+				      <%= yield :list %>
+				      
+				      <!-- END OF CONTENT -->
+
+					 <h3><%= @article.title %></h3>
+					 <p><%= @article.content %></p>
+
+
+					 <section class="section comments mb-5">
+	<div class="">
+		<h2 class="subtitle is-5"><strong><%= @article.comments.count %></strong> Comments</h2>
+		<div id="list-comments">
+			<%= render 'comments/comments'%>
+		</div>
+		<div class="comment-form">
+			<hr />
+			<h3 class="subtitle is-3">Leave a reply</h3>
+			<div id="form-comment">
+		 		<%= render 'comments/form' %>
+			</div>
+		</div>
+	</div>
+</section>
+
+					 
+
+					 <p><%= link_to 'back', articles_path, class: 'btn btn-md btn-info'%></p>
+						
+				     
+				</div>
+			</div>
+		</section>
+	</div>
+</div>
+	
+  
+</body>
+</html>

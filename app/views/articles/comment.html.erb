@@ -1,0 +1,14 @@
+<h2><$= @article.title %></h2>
+<p>@article.content</p>
+
+<% for comment in @article.comments %>
+<p> <%= comment.content %></p>
+
+
+
+<%= start_form_tag (:action => "save_commnet", :id => @article) %>
+
+<p><%= text_area("comment","content") %></p>
+<p><input type="submit" name="submit" value="submit"></p>
+
+<%= end_form_tag %>
